@@ -8,9 +8,15 @@
 // assignment no.5
 
 import 'dart:io';
-
 void main(List<String> args) {
-  stdout.write("enter your double number:");
-  double number = double.parse(stdin.readLineSync()!);
-  print(number.round());
+  stdout.write("enter your weight in kilograms:");
+  double weight = double.parse(stdin.readLineSync()!);
+  stdout.write("enter your height in meters:");
+  double height = double.parse(stdin.readLineSync()!);
+  calculateBMI(double weight, double height) {
+    return weight / (height * height);
+  }
+
+  double BMI = calculateBMI(weight, height);
+  print("your total BMI is :${BMI.toStringAsFixed(1)}");
 }
